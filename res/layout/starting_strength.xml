@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/startingstrength">
+  <com.latchd.picker.LiftDatePicker android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/datePicker">
+  
+  </com.latchd.picker.LiftDatePicker>
+   <LinearLayout android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/border" android:layout_margin="2dp">
+      <RadioGroup android:id="@+id/radioGroup1" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="fill_parent" android:gravity="center_horizontal">
+          <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:checked="true" android:layout_margin="5dp" android:text=" Workout A" android:id="@+id/workouta_radio"></RadioButton>
+          <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_margin="5dp" android:text=" Workout B" android:id="@+id/workoutb_radio"></RadioButton>
+      </RadioGroup>
+  </LinearLayout>
+  <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout7" android:background="@drawable/border" android:layout_height="fill_parent" android:orientation="vertical" android:layout_margin="2dp">
+      <LinearLayout android:layout_width="fill_parent" android:id="@+id/linearLayout3" android:orientation="vertical" android:layout_height="wrap_content" android:layout_margin="5dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16dp" android:id="@+id/one_label" android:text="Back Squat Weight (3x5):"></TextView>
+          <com.latchd.picker.DecimalSelector android:layout_width="fill_parent" android:id="@+id/one_number_selector" android:layout_height="wrap_content" android:layout_marginTop="5dp">
+              
+          </com.latchd.picker.DecimalSelector>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout4" android:orientation="vertical" android:layout_height="75dp" android:layout_margin="5dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16dp" android:id="@+id/two_label" android:text="Bench Press Weight (3x5):"></TextView>
+          <com.latchd.picker.DecimalSelector android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/two_number_selector" android:layout_marginTop="5dp">
+              
+          </com.latchd.picker.DecimalSelector>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout5" android:orientation="vertical" android:layout_height="75dp" android:layout_margin="5dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16dp" android:id="@+id/three_label" android:text="Deadlift Weight (1x5):"></TextView>
+          <com.latchd.picker.DecimalSelector android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_gravity="left|right" android:id="@+id/three_number_selector" android:layout_marginTop="5dp">
+              
+          </com.latchd.picker.DecimalSelector>
+      </LinearLayout>
+  </LinearLayout>
+  <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout6" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@drawable/border" android:layout_margin="2dp">
+      <CheckBox android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="5dp" android:text=" Generate Warmups" android:id="@+id/warmup_checkbox"></CheckBox>
+  </LinearLayout>
+  <TextView android:layout_width="match_parent" android:text="More Info" android:layout_height="wrap_content" android:clickable="true" android:textSize="16dp" android:gravity="right" android:layout_gravity="right|center_vertical" android:layout_marginRight="5dp" android:id="@+id/link_text" android:textStyle="bold" android:textColor="#FFFFFF"></TextView>
+</LinearLayout>
+
+</ScrollView>

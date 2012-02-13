@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Add Lift" android:enabled="true" android:id="@+id/addlift" android:titleCondensed="Add Lift" android:alphabeticShortcut="L" android:icon="@drawable/appbarweights2">
+        <menu>
+            <item android:titleCondensed="Open Protocol" android:enabled="true" android:id="@+id/openprotocol" android:title="Open Protocol" android:alphabeticShortcut="o" android:icon="@drawable/plus"></item>
+            <item android:titleCondensed="Stronglifts 5x5 Basic" android:id="@+id/slfivebyfive" android:title="Stronglifts 5x5 Basic" android:enabled="true" android:alphabeticShortcut="5"></item><item android:titleCondensed="Wendler 5/3/1" android:id="@+id/wendler" android:title="Wendler 5/3/1" android:enabled="true" android:alphabeticShortcut="w"></item>
+            
+            <item android:id="@+id/ssbasic" android:title="Starting Strength Basic" android:titleCondensed="Starting Strength Basic" android:alphabeticShortcut="s"></item>
+            <!--  <item android:id="@+id/madcow" android:title="Madcow 5x5" android:enabled="false" android:titleCondensed="Madcow 5x5"></item> -->
+            
+        </menu>
+    </item>
+    <item android:title="Add Run" android:id="@+id/addrun" android:titleCondensed="Add Run" android:alphabeticShortcut="r" android:enabled="true" android:icon="@drawable/appbarjog2"></item>
+    <item android:title="Set Display Range" android:enabled="true" android:id="@+id/setranges" android:titleCondensed="Display" android:icon="@drawable/phone">
+    <menu><item android:enabled="true" android:id="@+id/today" android:titleCondensed="Today Only" android:title="Show Todays Workouts Only" android:alphabeticShortcut="t"></item><item android:id="@+id/lastsevendays" android:enabled="true" android:titleCondensed="Last 7 Days" android:title="Show Week (-3, Today, +3)" android:alphabeticShortcut="7" android:numericShortcut="7"></item><item android:id="@+id/month" android:title="Show This Months Workouts" android:titleCondensed="Show This Month" android:alphabeticShortcut="m" android:enabled="true" />
+    <item android:titleCondensed="Year View" android:enabled="true" android:id="@+id/yearview" android:title="Show The Entire Years Workouts" android:alphabeticShortcut="y"></item>
+    
+    <item android:id="@+id/showall" android:titleCondensed="Show All" android:title="Showing All Entries" android:alphabeticShortcut="a"></item>
+    
+</menu>
+</item>
+</menu>

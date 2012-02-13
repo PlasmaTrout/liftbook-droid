@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wendler_assistance_lifts">
+        <item>Ab Wheel</item>
+        <item>Back Squat</item>
+        <item>Back Raise</item>
+        <item>Barbell Incline Press</item>
+        <item>Barbell Row</item>
+        <item>Barbell Shrug</item>
+        <item>Bench Press</item>
+        <item>Chins</item>
+        <item>Deadlift</item>
+        <item>Dumbell Bench</item>
+        <item>Dumbell Incline Press</item>
+        <item>Dumbell Side Bend</item>
+        <item>Dumbell Military Press</item>
+        <item>Dumbell Row</item>
+        <item>Dip</item>
+        <item>Glute Ham Raise</item>
+        <item>Good Morning</item>
+        <item>Hanging Leg Raise</item>
+        <item>Kroc Row</item>
+        <item>Leg Curl</item>
+        <item>Leg Press</item>
+        <item>Lunge</item>
+        <item>Military Press</item>
+        <item>Pushup</item>
+        <item>Sit-Up</item>
+        <item>Step-Up</item>
+    </string-array>
+</resources>

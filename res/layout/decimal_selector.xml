@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <ImageButton android:id="@+id/dselector_minus" android:src="@drawable/minusinvert" android:layout_height="45dp" android:layout_width="45dp" android:layout_alignParentLeft="true" android:background="@drawable/border"></ImageButton>
+    <EditText android:id="@+id/dselector_text" android:inputType="numberDecimal" android:layout_width="fill_parent" android:gravity="fill_vertical|center_horizontal" android:layout_alignParentBottom="true" android:layout_alignParentTop="true" android:layout_toRightOf="@+id/dselector_minus" android:layout_toLeftOf="@+id/dselector_plus" android:singleLine="true" android:layout_height="wrap_content"></EditText>
+    <ImageButton android:id="@+id/dselector_plus" android:src="@drawable/plusinvert" android:layout_height="45dp" android:layout_width="45dp" android:layout_alignParentRight="true" android:background="@drawable/border"></ImageButton>
+</RelativeLayout>

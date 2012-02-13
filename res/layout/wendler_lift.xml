@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:orientation="vertical" android:layout_height="fill_parent" android:background="@drawable/fivethreeonetwo">
+    <LinearLayout android:id="@+id/linearLayout8" android:layout_height="60dp" android:layout_width="match_parent" android:layout_margin="2dp" android:background="@drawable/border">
+        <Button android:layout_marginLeft="2dip" android:layout_height="wrap_content" android:id="@+id/button1" android:text="Change" android:gravity="center_vertical" android:layout_width="wrap_content"></Button>
+        <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical">
+            <TextView android:layout_marginLeft="2dip" android:layout_height="wrap_content" android:text="@string/lift_date_label" android:id="@+id/selectdatelabel" android:layout_width="fill_parent"></TextView>
+            <TextView android:layout_marginLeft="2dip" android:layout_height="wrap_content" android:text="2005-10-10" android:textSize="22dip" android:id="@+id/selecteddate" android:layout_width="wrap_content"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/linearLayout7" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical" android:background="@drawable/border" android:layout_margin="2dp">
+        <LinearLayout android:id="@+id/linearLayout2" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+            <TextView android:layout_marginLeft="5dip" android:layout_height="wrap_content" android:id="@+id/mainliftlabel" android:layout_width="wrap_content" android:text="Main Lift:" android:textSize="16dp" android:textStyle="bold"></TextView>
+            <Spinner android:layout_height="50dp" android:layout_width="match_parent" android:id="@+id/mainliftspinner"></Spinner>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical">
+            <TextView android:layout_marginLeft="5dp" android:layout_height="wrap_content" android:text="Main Lift 1RM:" android:textSize="16dp" android:id="@+id/textView2" android:layout_width="wrap_content" android:textStyle="bold"></TextView>
+            <com.latchd.picker.DecimalSelector android:id="@+id/main_number_selector" android:layout_marginTop="5dp" android:layout_height="50dp" android:layout_width="fill_parent" android:layout_gravity="left|right">
+                
+            </com.latchd.picker.DecimalSelector>
+            <TextView android:layout_marginLeft="5dp" android:layout_height="wrap_content" android:layout_marginBottom="5dp" android:text="Selected 1RM Is 200 - Using 190 (90%)" android:id="@+id/mainliftdetails" android:layout_width="wrap_content" android:textColor="#ACFA58" android:layout_gravity="center_vertical|center_horizontal|center"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+   <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:background="@drawable/border" android:layout_margin="2dp">
+       <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select Assistance Lift 1 (5x10):" android:layout_marginLeft="5dp" android:textSize="16dp" android:textStyle="bold" android:id="@+id/textAssist1"></TextView>
+       <Spinner android:id="@+id/spinner1" android:layout_height="wrap_content" android:layout_width="fill_parent"></Spinner>
+       <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assistance 1 Weight:" android:textSize="16dp" android:layout_marginLeft="5dp" android:textStyle="bold" android:id="@+id/testAssist1Weight"></TextView>
+       <com.latchd.picker.DecimalSelector android:layout_gravity="left|right" android:layout_width="fill_parent" android:layout_marginTop="5dp" android:id="@+id/assistance1_number_selector" android:layout_height="50dp">
+            
+      	</com.latchd.picker.DecimalSelector>
+   </LinearLayout>
+   <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout5" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:background="@drawable/border" android:layout_margin="2dp">
+       <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select Assistance Lift 2 (5x10):" android:textSize="16dp" android:textStyle="bold" android:id="@+id/testAssist2"></TextView>
+       <Spinner android:id="@+id/spinner2" android:layout_width="fill_parent" android:layout_height="wrap_content"></Spinner>
+       <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assistance 2 Weight:" android:textSize="16dp" android:layout_marginLeft="5dp" android:textStyle="bold" android:id="@+id/textAssist2Weight"></TextView>
+       <com.latchd.picker.DecimalSelector android:layout_gravity="left|right" android:layout_width="fill_parent" android:layout_marginTop="5dp" android:id="@+id/assistance2_number_selector" android:layout_height="50dp">
+            
+      	</com.latchd.picker.DecimalSelector>
+   </LinearLayout>
+   <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout6" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/border" android:layout_margin="2dp">
+       <TextView android:id="@+id/textView5" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Week:" android:textSize="16dp" android:layout_marginLeft="5dp" android:textStyle="bold"></TextView>
+       <RadioGroup android:id="@+id/radioGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+           <RadioButton android:layout_width="wrap_content" android:id="@+id/week1radio" android:layout_height="wrap_content" android:checked="true" android:text="One"></RadioButton>
+           <RadioButton android:layout_width="wrap_content" android:id="@+id/week2radio" android:layout_height="wrap_content" android:text="Two"></RadioButton>
+           <RadioButton android:layout_width="wrap_content" android:id="@+id/week3radio" android:layout_height="wrap_content" android:text="Three"></RadioButton>
+           <RadioButton android:layout_width="wrap_content" android:id="@+id/week4radio" android:layout_height="wrap_content" android:text="Four"></RadioButton>
+       </RadioGroup>
+   </LinearLayout>
+   <TextView android:text="More Info" android:layout_height="wrap_content" android:id="@+id/moreinfolink" android:layout_margin="5dp" android:textSize="16dp" android:gravity="right" android:layout_width="match_parent" android:textColor="#FFFFFF" android:textStyle="bold"></TextView>
+</LinearLayout>
+</ScrollView>

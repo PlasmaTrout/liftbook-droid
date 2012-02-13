@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+     android:padding="6dip" android:orientation="vertical" android:background="@drawable/border2" android:layout_height="fill_parent">
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+     android:orientation="vertical" android:fadingEdge="horizontal" android:layout_height="wrap_content">
+     
+         
+     <LinearLayout
+         android:layout_weight="1"
+         android:orientation="horizontal" android:layout_marginLeft="2dip" android:layout_height="wrap_content" android:layout_width="match_parent">
+         <TextView
+         android:id="@+id/exerciselabel"
+         android:layout_weight="1"
+         android:layout_width="fill_parent" android:textStyle="bold" android:layout_marginTop="5dip" android:textSize="18dip" android:textColor="#FFFFFF" android:text="Barbell Incline Press Assistance" android:layout_height="fill_parent">      
+         </TextView>
+         <CheckBox android:id="@+id/completed_check_box" android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:clickable="false" android:focusable="false"></CheckBox>
+         
+     </LinearLayout>
+     <LinearLayout android:id="@+id/linearLayout1" android:orientation="horizontal" android:layout_marginLeft="2dip" android:layout_height="fill_parent" android:layout_width="match_parent">
+         <TextView android:layout_weight="1" android:layout_width="wrap_content" android:id="@+id/setlabel" android:layout_height="fill_parent" android:textStyle="bold" android:text="Set 1" android:textSize="18dip" android:textColor="#ACFA58"></TextView>
+         <TextView android:textColor="#ACFA58" android:id="@+id/prlabel" android:layout_height="wrap_content" android:text="1RM 205" android:gravity="right" android:layout_width="wrap_content"></TextView>
+     </LinearLayout>
+     <LinearLayout android:orientation="horizontal" android:gravity="left" android:layout_marginLeft="2dip" android:id="@+id/linearLayout4" android:layout_height="fill_parent" android:layout_width="match_parent" android:layout_marginTop="2dip">
+         <TextView android:text="@string/reps_label" android:layout_height="fill_parent" android:textColor="#57FEFF" android:layout_width="wrap_content" android:id="@+id/textView2"></TextView>
+         <TextView android:text="@string/empty_count" android:layout_height="fill_parent" android:layout_marginLeft="5dip" android:layout_width="wrap_content" android:id="@+id/reps_count_placeholder"></TextView>
+         <TextView android:text="X" android:layout_height="fill_parent" android:layout_marginLeft="5dip" android:layout_width="wrap_content" android:id="@+id/textView5"></TextView>
+         <TextView android:text="@string/weight_label" android:layout_height="fill_parent" android:layout_marginLeft="5dip" android:textColor="#FBB917" android:layout_width="wrap_content" android:id="@+id/textView3"></TextView>
+         <TextView android:text="@string/empty_count" android:layout_height="fill_parent" android:layout_marginLeft="5dip" android:layout_width="wrap_content" android:id="@+id/weight_count_placeholder"></TextView>
+     </LinearLayout>
+ </LinearLayout>
+</LinearLayout>

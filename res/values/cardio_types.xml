@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cardio_types">
+        <item>Run</item>
+        <item>Sprint</item>
+        <item>Jog</item>
+        <item>Power Walk</item>
+        <item>Walk</item>
+        <item>Swim</item>
+        <item>Elliptical</item>
+        <item>Cybex</item>
+        <item>Other</item>
+    </string-array>
+</resources>

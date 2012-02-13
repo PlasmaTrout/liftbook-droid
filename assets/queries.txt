@@ -1,0 +1,31 @@
+CREATE TABLE lifts (id INTEGER PRIMARY KEY,date TEXT,
+protocol TEXT,liftname TEXT,is_complete INTEGER, reps INTEGER, weight INTEGER);
+
+CREATE TABLE runs (id INTEGER PRIMARY KEY,date TEXT DEFAULT(date('now')),type TEXT DEFAULT('other'),duration_hours INTEGER DEFAULT(0),
+duration_minutes INTEGER DEFAULT(0),duration_seconds INTEGER DEFAULT(0),miles REAL DEFAULT (0.0),resistance REAL DEFAULT(0.0),
+incline INTEGER DEFATUL(0));
+
+CREATE VIEW V_Lifts AS select id,date,protocol,liftname,is_complete,reps,weight,round((weight*0.45359237),2) as Kilos,(reps*weight) as Tonnage,round(((weight*reps)*0.03333+weight),2),cast(((weight*reps)*0.03333+weight) as INTEGER)/5*5 BarOneRep from lifts;
+
+
+insert into runs VALUES (NULL,datetime('now'),'jog',0,15,30,2,0,0);
+insert into runs VALUES (NULL,'2011-05-18 01:00:00','jog',0,15,30,2,0,0);
+
+INSERT INTO lifts VALUES(NULL,'2011-05-12 12:34:00','Wendler 5/3/1','Back Squat',1,5,160);
+insert into runs VALUES (NULL,'2011-05-12 01:00:00','Walk',0,15,30,2,0,0);
+
+CREATE VIEW V_Schedule AS select date(date) as Date,'Lifts' as Name,protocol as Type,count(*) as Total from Lifts GROUP BY date(date)
+UNION ALL
+select date(date),'Runs' as Name,type as Type,count(*) as Total from Runs GROUP BY date(date);
+
+CREATE VIEW V_MasterSchedule AS select distinct(date) as Date,(SELECT COUNT(*) FROM Lifts where date(date)=date(v.date)) as LiftCount,(SELECT protocol from Lifts where date(date)=date(v.date) LIMIT 1) as Protocol,(SELECT type from Runs where date(date)=date(v.date) LIMIT 1) as RunType,(SELECT COUNT(*) FROM Runs where date(date)=date(v.date)) as RunsCount from V_Schedule v;
+
+CREATE VIEW V_LiftsByName AS select date,liftname,tonnage,max(baronerep) as baronerep,(SELECT max(BarOneRep) from V_Lifts where liftname=v.liftname) as alltimeonerep,count(*) as sets, is_complete from V_Lifts v group by liftname;
+
+UPDATE Lifts set reps=?, weight=?, is_complete=? where id=?;
+
+CREATE VIEW V_RunsByType select date,type,duration_hours,duration_minutes,duration_seconds,miles,round(((duration_hours/60+duration_minutes)/miles)) as mm,round((60/((duration_hours/60+duration_minutes)/miles)),2) as mph from runs;
+
+UPDATE runs set duration_hours=?,duration_minutes=?,duration_seconds=?,is_complete=?,miles=? where id=?;
+
+ALTER VIEW V_LiftsByName AS select date,liftname,tonnage,max(onerepmax) as baronerep,(SELECT max(onerepmax) from V_Lifts where liftname=v.liftname) as alltimeonerep,count(*) as sets, is_complete from V_Lifts v group by liftname;

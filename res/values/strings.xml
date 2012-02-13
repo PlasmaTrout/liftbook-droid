@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, LiftbookCreateActivity!</string>
+    <string name="app_name">Liftbook</string>
+    <string name="app_mainsection_title">My Workouts</string>
+    <string name="inverse_text_color">#FFFFFF</string>
+    <string name="schedule_bottom">10 Lifts 1 Runs Open</string>
+    <string name="lift_label">Lifts</string>
+    <string name="empty_count">00</string>
+    <string name="run_label">Cardio</string>
+    <string name="lift_date_label">Selected Date:</string>
+    <string name="lift_name_label">Select Lift:</string>
+    <string name="main_lift_string">Main</string>
+    <string name="assistance_lift_string">Assistance</string>
+    <string name="warmup_lift_string">Warmup</string>
+    <string name="reps_label">Reps:</string>
+    <string name="weight_label">Weight:</string>
+    <string name="sets_label">Sets:</string>
+    <string name="one_rep_max_label">1RM</string>
+    <string name="day_one_rep_max_label">Today 1RM:</string>
+    <string name="tonnage_label">Tonnage:</string>
+    <string name="edit_weight_text">Use this dialog to change your weights for a given exercise and hit the save button. If you don\'t wish to change them just press cancel.</string>
+    <string name="edit_weight_brief">Use this dialog to change your weights for a given exercise or cancel.</string>
+    <string name="edit_run_text">From this dialog you can edit your run information. After editing click save to continue or cancel to stop editing.</string>
+</resources>

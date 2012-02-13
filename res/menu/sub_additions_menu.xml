@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Add Lift" android:enabled="true" android:id="@+id/addlift" android:titleCondensed="Add Lift" android:alphabeticShortcut="L" android:icon="@drawable/appbarweights2" android:visible="true">
+    </item>
+    <item android:titleCondensed="Add Run" android:title="Add Run" android:id="@+id/addrun" android:icon="@drawable/appbarjog2"></item>
+</menu>

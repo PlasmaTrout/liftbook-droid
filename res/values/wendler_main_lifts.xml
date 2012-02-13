@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wendler_main_lifts">
+        <item>Back Squat</item>
+        <item>Front Squat</item>
+        <item>Overhead Squat</item>
+        <item>Bench Press</item>
+        <item>Deadlift</item>
+        <item>Sumo Deadlift</item>
+        <item>Military Press</item>
+    </string-array>
+</resources>

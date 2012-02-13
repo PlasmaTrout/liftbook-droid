@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.latchd"
+      android:versionName="Liftbook V1.2.0" android:versionCode="5">
+    <uses-sdk android:minSdkVersion="8"/><application android:label="@string/app_name" android:icon="@drawable/wpliftstile" android:debuggable="true">
+        <activity android:name=".LiftbookCreateActivity" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="LiftbookCreateLiftActivity" android:label="Liftbook - Create Open Lift">
+            <intent-filter>
+                <action android:name="com.latchd.CREATEOPENLIFT"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name="LiftbookDisplayDayActivity" android:label="Liftbook - Display Day"></activity>
+        <activity android:label="Liftbook - Display Exercise " android:name="LiftbookDisplayExerciseActivity"></activity>
+        <activity 
+        	android:name="LiftbookViewSetActivity"
+        	android:label="Liftbook - View Set"
+        	android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="LiftbookCreateRunActivity" android:label="Liftbook - Create Cardio Session">
+            <intent-filter>
+                <action android:name="com.latchd.CREATERUN"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name="LiftbookRunSetActivity" android:theme="@android:style/Theme.Dialog" android:label="Liftbook - Edit Run">
+            <intent-filter>
+                <action android:name="com.latchd.EDITRUNACTIVITY"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:label="Liftbook - StrongLift 5x5 Addition" android:name=".templates.StrongLiftsBasicActivity">
+            <intent-filter>
+                <action android:name="com.latchd.CREATESTRONGLIFT"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".templates.WendlerBasicActivity" android:label="Liftbook - Wendler 5/3/1 Addition">
+            <intent-filter>
+                <action android:name="com.latchd.CREATEWENDLERLIFT"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".templates.StartingStrengthBasicActivity" android:label="Liftbook - Starting Strength Basic">
+            <intent-filter>
+                <action android:name="com.latchd.CREATESSBASICLIFT"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

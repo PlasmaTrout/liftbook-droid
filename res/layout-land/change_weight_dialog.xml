@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:orientation="horizontal">
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:orientation="vertical" android:layout_width="300dip" android:background="#000000">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginRight="5dip" android:layout_marginTop="5dip" android:id="@+id/textView1" android:layout_marginLeft="5dip" android:text="@string/edit_weight_brief"></TextView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:text="@string/reps_label"
+                    android:textSize="16dip" >
+</TextView>
+                <com.latchd.picker.NumberSelector android:id="@+id/reps_number_picker" android:layout_height="fill_parent" android:layout_gravity="left|right" android:layout_width="fill_parent">                   
+                </com.latchd.picker.NumberSelector>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:orientation="vertical" >
+
+                <TextView android:layout_height="wrap_content" android:text="@string/weight_label" android:textSize="16dip" android:layout_width="wrap_content" android:id="@+id/textView3" android:layout_marginLeft="8dip"></TextView>
+                <com.latchd.picker.DecimalSelector android:layout_width="fill_parent" android:id="@+id/weight_number_picker" android:layout_height="fill_parent" android:layout_gravity="left|right">
+                    
+                </com.latchd.picker.DecimalSelector>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2">
+            <CheckBox android:layout_height="wrap_content" android:id="@+id/checkBox1" android:layout_width="wrap_content" android:text=" Completed" android:layout_marginLeft="5dip"></CheckBox>
+            <TextView android:layout_height="wrap_content" android:text="1RM 000" android:textColor="#ACFA58" android:textSize="20dip" android:layout_width="wrap_content" android:id="@+id/onerepmaxlabel" android:gravity="right" android:layout_marginLeft="10dip"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+  <LinearLayout android:layout_width="fill_parent" android:id="@+id/linearLayout1" android:orientation="vertical" android:layout_height="fill_parent">
+      <Button android:id="@+id/savebutton" android:layout_marginTop="10dip" android:text="Save" android:layout_gravity="top" android:layout_width="fill_parent" android:layout_height="100dip"></Button>
+      <Button android:id="@+id/cancelbutton" android:layout_width="fill_parent" android:layout_marginTop="10dip" android:text="Cancel" android:layout_height="100dip"></Button>
+  </LinearLayout>
+</LinearLayout>

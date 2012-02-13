@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:text="@string/edit_weight_text" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="8dip"
+                android:text="@string/reps_label"
+                android:textSize="16dip" />
+
+            <com.latchd.picker.NumberSelector
+                android:id="@+id/reps_number_picker"
+                android:layout_width="fill_parent"
+                android:layout_height="41dp"
+                android:layout_gravity="left|right">
+            </com.latchd.picker.NumberSelector>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="12dip" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:layout_weight="0.55"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/weight_label"
+            android:textSize="16dip" />
+
+        <com.latchd.picker.DecimalSelector
+            android:id="@+id/weight_number_picker"
+            android:layout_width="fill_parent"
+            android:layout_height="41dp"
+            android:layout_gravity="left|right"
+            android:layout_weight="0.10">
+        </com.latchd.picker.DecimalSelector>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:text=" Completed" >
+        </CheckBox>
+
+        <TextView
+            android:id="@+id/onerepmaxlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:gravity="right"
+            android:text="1RM 000"
+            android:textColor="#ACFA58"
+            android:textSize="20dip" >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/savebutton"
+            android:layout_width="150dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="Save" >
+        </Button>
+
+        <Button
+            android:id="@+id/cancelbutton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="Cancel" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

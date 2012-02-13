@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="open_lift_array">
+        <item>Back Squat</item>
+<item>Bench Press</item>
+<item>Bent Over Row</item>
+<item>Clean</item>
+<item>Clean And Jerk</item>
+<item>Conventional Deadlift</item>
+<item>Decline Press</item>
+<item>Fly</item>
+<item>Front Squat</item>
+<item>Good Morning</item>
+<item>Hang Clean</item>
+<item>Incline Press</item>
+<item>Military Press</item>
+<item>Overhead Squat</item>
+<item>Pendlay Row</item>
+<item>Power Clean</item>
+<item>Power Snatch</item>
+<item>Push Press</item>
+<item>Romanian Deadlift</item>
+<item>Snatch</item>
+<item>Stiff Leg Deadlift</item>
+<item>Sumo Deadlift</item>
+<item>Zercher Squat</item>
+<item>Barbell Curl</item>
+<item>Dumbell Concentration Curl</item>
+<item>Dumbell Hammer Curl</item>
+<item>Dumbell Tricep Kickbacks</item>
+<item>Dumbell Tricep Extensions</item>
+<item>Cable Tricep Pushdowns</item>
+<item>Dips</item>
+<item>Bench Dips</item>
+<item>Chin Ups</item>
+<item>Pull Ups</item>
+<item>Leg Curl</item>
+<item>Leg Extensions</item>
+<item>Calf Raises</item>
+<item>Barbell Shrugs</item>
+<item>Cable Crossovers</item>
+<item>Dumbell Bench Press</item>
+<item>Dumbell Incline Press</item>
+<item>Dumbell Decline Press</item>
+<item>Dumbell Flys</item>
+
+    </string-array>
+</resources>

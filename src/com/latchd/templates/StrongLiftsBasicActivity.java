@@ -9,6 +9,7 @@ import com.latchd.R;
 import com.latchd.liftbook.data.ILiftStorageFactory;
 import com.latchd.liftbook.data.LiftStorageFactory;
 import com.latchd.liftbook.data.LiftbookDataHelper;
+import com.latchd.liftbook.data.LiftbookSettingsHelper;
 import com.latchd.liftbook.data.ScheduledLift;
 import com.latchd.picker.DecimalSelector;
 import android.app.Activity;
@@ -137,6 +138,10 @@ public class StrongLiftsBasicActivity extends Activity implements OnCheckedChang
 		float maxone;
 		float maxtwo;
 		float maxthree;
+		float mid = 135;
+		if(LiftbookSettingsHelper.UseMetricSystem(this)){
+			mid=60;
+		}
 		
 		if(wa.isChecked()){
 			maxone = helper.GetRecentMax(WORK_A_TYPE_1);
@@ -156,17 +161,17 @@ public class StrongLiftsBasicActivity extends Activity implements OnCheckedChang
 		if(maxone > 0){
 			none.setCurrent(CalcFiveRep(maxone)+5);
 		}else{
-			none.setCurrent(135);
+			none.setCurrent(mid);
 		}
 		if(maxtwo > 0){
 			ntwo.setCurrent(CalcFiveRep(maxtwo)+5);
 		}else{
-			ntwo.setCurrent(135);
+			ntwo.setCurrent(mid);
 		}
 		if(maxthree > 0){
 			nthree.setCurrent(CalcFiveRep(maxthree)+5);
 		}else{
-			nthree.setCurrent(135);
+			nthree.setCurrent(mid);
 		}
 		
 		

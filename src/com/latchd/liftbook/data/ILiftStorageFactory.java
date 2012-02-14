@@ -2,6 +2,7 @@ package com.latchd.liftbook.data;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
 
 public interface ILiftStorageFactory {

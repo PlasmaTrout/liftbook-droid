@@ -20,4 +20,5 @@
     
 </menu>
 </item>
+    <item android:id="@+id/settings" android:titleCondensed="Settings" android:title="Application Settings" android:enabled="true" android:alphabeticShortcut="s" android:icon="@drawable/system_config_services"></item>
 </menu>

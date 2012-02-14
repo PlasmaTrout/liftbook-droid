@@ -2,6 +2,7 @@ package com.latchd.templates;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.latchd.liftbook.data.ILiftStorageFactory;

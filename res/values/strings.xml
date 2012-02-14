@@ -19,6 +19,11 @@
     <string name="one_rep_max_label">1RM</string>
     <string name="day_one_rep_max_label">Today 1RM:</string>
     <string name="tonnage_label">Tonnage:</string>
+    <string name="app_settings_title">Application Settings</string>
+    <string name="use_metric_check">Use Metric System Defaults</string>
+    <string name="use_metric_description">This option defaults all minimum weights to 20kg and will have future uses to set the label for the weights.</string>
+    <string name="use_wendler_full">Use Wendler Full Max</string>
+    <string name="use_wendler_desc">Setting this option to true will change your 1RM to use 100 percent of your specified amount and not the typical 90 percent used in the beginning phases.</string>
     <string name="edit_weight_text">Use this dialog to change your weights for a given exercise and hit the save button. If you don\'t wish to change them just press cancel.</string>
     <string name="edit_weight_brief">Use this dialog to change your weights for a given exercise or cancel.</string>
     <string name="edit_run_text">From this dialog you can edit your run information. After editing click save to continue or cancel to stop editing.</string>

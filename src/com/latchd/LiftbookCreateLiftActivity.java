@@ -7,6 +7,7 @@ import java.util.Comparator;
 
 import com.latchd.liftbook.data.ILiftStorageFactory;
 import com.latchd.liftbook.data.LiftStorageFactory;
+import com.latchd.liftbook.data.LiftbookSettingsHelper;
 import com.latchd.liftbook.data.ScheduledLift;
 import com.latchd.picker.DecimalSelector;
 import com.latchd.picker.NumberSelector;
@@ -21,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -43,6 +45,7 @@ public class LiftbookCreateLiftActivity extends Activity {
 	RadioGroup g;
 	String checked;
 	String selectedDate;
+	CheckBox warmup;
 	
 	DatePickerDialog.OnDateSetListener mDateSetListener =  new DatePickerDialog.OnDateSetListener() {
 
@@ -70,6 +73,7 @@ public class LiftbookCreateLiftActivity extends Activity {
         weightPicker = (DecimalSelector) findViewById(R.id.weight_number_picker);
         setsPicker = (NumberSelector) findViewById(R.id.sets_number_picker);
         g = (RadioGroup) findViewById(R.id.radioGroup1);
+        warmup = (CheckBox) findViewById(R.id.generateWarmups);
         
         
         
@@ -126,11 +130,16 @@ public class LiftbookCreateLiftActivity extends Activity {
 			}
 		});
 	
+        float mid = 135;
+        if(LiftbookSettingsHelper.UseMetricSystem(this)){
+        	mid=60;
+        }
+        
         repsPicker.setRange(1, 50);
         repsPicker.setCurrent(10);
         
         weightPicker.setRange(5, 1000,5);
-        weightPicker.setCurrent(135);
+        weightPicker.setCurrent(mid);
         
         setsPicker.setRange(1,10);
         setsPicker.setCurrent(3);
@@ -184,9 +193,16 @@ public class LiftbookCreateLiftActivity extends Activity {
 		}
 	}
 	
+	private int GetWarmupValue(float totalWeight, float percentage){
+		 double value = totalWeight * ((double)percentage / 100.00);
+        int adjustedWeight = (int) ((int)Math.round(value / 5.0)) * 5;
+		 return adjustedWeight;
+	}
+	
 	private void saveNewLift(){
 		ArrayList<ScheduledLift> list = new ArrayList<ScheduledLift>();
 		
+		float minWeight = LiftbookSettingsHelper.GetDefaultWeight(this);
 		
 		String date = selectedYear+"-"+String.format("%02d",(selectedMonth+1))+"-"+String.format("%02d",selectedDay);
 		String chosen = s.getAdapter().getItem(s.getSelectedItemPosition()).toString();
@@ -195,12 +211,25 @@ public class LiftbookCreateLiftActivity extends Activity {
 			chosen = chosen + " " + checked;
 		}
 		
+		if(warmup.isChecked()){
+			if(!chosen.toLowerCase().contains("deadlift")){
+				list.add(new ScheduledLift(date,chosen+" Warmup",2,5,minWeight));
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,3,GetWarmupValue(weightPicker.getCurrent(),60)));
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,3,GetWarmupValue(weightPicker.getCurrent(),70)));
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,2,GetWarmupValue(weightPicker.getCurrent(),80)));
+			}else{
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,3,GetWarmupValue(weightPicker.getCurrent(),70)));
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,3,GetWarmupValue(weightPicker.getCurrent(),80)));
+				list.add(new ScheduledLift(date,chosen+" Warmup",1,2,GetWarmupValue(weightPicker.getCurrent(),90)));
+			}
+		}
+		
 		ScheduledLift lift = new ScheduledLift(date, chosen, setsPicker.getCurrent(), repsPicker.getCurrent(), weightPicker.getCurrent());
 		list.add(lift);
 		
 		ILiftStorageFactory factory = LiftStorageFactory.getFactory(LiftStorageFactory.OPEN_PROTOCOL);
 		factory.Save(this, list,false);
+	
+	
 	}
-	
-	
 }

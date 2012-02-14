@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_settings_title"
+        android:textAppearance="?android:attr/textAppearanceLarge" android:layout_gravity="left" android:layout_marginLeft="10dip"/>
+
+    <CheckBox
+        android:id="@+id/useMetricCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_metric_check" android:layout_marginLeft="5dip"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_metric_description"
+        android:textAppearance="?android:attr/textAppearanceSmall" android:layout_marginLeft="5dip"/>
+
+    <CheckBox
+        android:id="@+id/useWendlerMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:text="@string/use_wendler_full" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:text="@string/use_wendler_desc"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

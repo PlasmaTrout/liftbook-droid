@@ -33,6 +33,7 @@ import com.latchd.R;
 import com.latchd.liftbook.data.ILiftStorageFactory;
 import com.latchd.liftbook.data.LiftStorageFactory;
 import com.latchd.liftbook.data.LiftbookDataHelper;
+import com.latchd.liftbook.data.LiftbookSettingsHelper;
 import com.latchd.liftbook.data.ScheduledLift;
 import com.latchd.picker.DecimalSelector;
 
@@ -62,13 +63,14 @@ public class WendlerBasicActivity extends Activity {
 	TextView assist1TextWeight;
 	TextView assist2Text;
 	TextView assist2TextWeight;
+	boolean useMax;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wendler_lift);
-		
+		useMax = LiftbookSettingsHelper.UseWendlerMax(this);
 	    Button bt = (Button) this.findViewById(R.id.button1);
 	    selectedDate = (TextView) this.findViewById(R.id.selecteddate);
 	    mainLiftSpinner = (Spinner) this.findViewById(R.id.mainliftspinner);
@@ -162,7 +164,13 @@ public class WendlerBasicActivity extends Activity {
 				EditText box = (EditText) v;
 				float result = Float.parseFloat(box.getText().toString());
 				float finalValue = CalculationHelper.CalcWeightForPct(0.90, result, false);
-				mainLiftDetails.setText("Selected 1RM Is "+box.getText().toString()+" lbs. Using "+Float.toString(finalValue)+" lbs (90%).");
+				
+				if(useMax){
+					finalValue = result;
+					mainLiftDetails.setText("Best 1RM Was "+Float.toString(result)+". Using this value.");
+				}else{
+					mainLiftDetails.setText("Best 1RM Was "+Float.toString(result)+". Using "+Float.toString(finalValue)+" (90%).");
+				}
 			}
 		});
 		
@@ -182,10 +190,17 @@ public class WendlerBasicActivity extends Activity {
 				float max = helper.GetRecentMax(result);
 				mainSelector.setCurrent(CalculationHelper.GetNearestBarWeight(max));
 				
-				//Toast.makeText(WendlerBasicActivity.this, "Making "+result+" The Main Lift. Your Best 1RM Is "+Integer.toString(max), Toast.LENGTH_SHORT).show();
-				
 				float finalValue = CalculationHelper.CalcWeightForPct(0.90, max,false);
-				mainLiftDetails.setText("Best 1RM Was "+Float.toString(max)+". Using "+Float.toString(finalValue)+" (90%).");
+				
+				if(useMax){
+					finalValue = max;
+					mainLiftDetails.setText("Best 1RM Was "+Float.toString(max)+". Using this value.");
+				}else{
+					mainLiftDetails.setText("Best 1RM Was "+Float.toString(max)+". Using "+Float.toString(finalValue)+" (90%).");
+				}
+				
+				
+				
 				
 			}
 
@@ -205,7 +220,11 @@ public class WendlerBasicActivity extends Activity {
 				if(finalValue != 0){
 					selector1.setCurrent(CalculationHelper.GetNearestBarWeight(finalValue));
 				}else{
-					selector1.setCurrent(135.0F);
+					if(LiftbookSettingsHelper.UseMetricSystem(WendlerBasicActivity.this)){
+						selector1.setCurrent(60);
+					}else{
+						selector1.setCurrent(135.0F);
+					}
 				}
 			}
 
@@ -225,7 +244,11 @@ public class WendlerBasicActivity extends Activity {
 				if(finalValue != 0){
 					selector2.setCurrent(CalculationHelper.GetNearestBarWeight(finalValue));
 				}else{
-					selector2.setCurrent(135);
+					if(LiftbookSettingsHelper.UseMetricSystem(WendlerBasicActivity.this)){
+						selector2.setCurrent(60);
+					}else{
+						selector2.setCurrent(135.0F);
+					}
 				}
 			}
 
@@ -333,6 +356,10 @@ public class WendlerBasicActivity extends Activity {
 		ArrayList<ScheduledLift> list = new ArrayList<ScheduledLift>();
 		float max = mainSelector.getCurrent();
 		float finalValue = CalculationHelper.CalcWeightForPct(0.90, max,false);
+		
+		if(useMax){
+			finalValue = max;
+		}
 		
 		ScheduledLift mainLift = new ScheduledLift(selectedDate.getText().toString(),
 				mainLiftSpinner.getSelectedItem().toString(),3,0,

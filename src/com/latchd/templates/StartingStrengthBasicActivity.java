@@ -4,6 +4,7 @@ package com.latchd.templates;
 import com.latchd.IntentExtraKeys;
 import com.latchd.R;
 import com.latchd.liftbook.data.LiftbookDataHelper;
+import com.latchd.liftbook.data.LiftbookSettingsHelper;
 import com.latchd.picker.DecimalSelector;
 import com.latchd.picker.LiftDatePicker;
 import android.app.Activity;
@@ -100,6 +101,11 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 	private void loadOneRepMaximums() {
 		
 		LiftbookDataHelper helper = new LiftbookDataHelper(this);
+		float defaultMid = 135;
+		
+		if(LiftbookSettingsHelper.UseMetricSystem(this)){
+			defaultMid = 60;
+		}
 		
 		float maxone;
 		float maxtwo;
@@ -123,17 +129,17 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 		if(maxone > 0){
 			none.setCurrent(CalculationHelper.CalcWeightForReps(5, maxone)+5);
 		}else{
-			none.setCurrent(135);
+			none.setCurrent(defaultMid);
 		}
 		if(maxtwo > 0){
 			ntwo.setCurrent(CalculationHelper.CalcWeightForReps(5, maxtwo)+5);
 		}else{
-			ntwo.setCurrent(135);
+			ntwo.setCurrent(defaultMid);
 		}
 		if(maxthree > 0){
 			nthree.setCurrent(CalculationHelper.CalcWeightForReps(5, maxthree));
 		}else{
-			nthree.setCurrent(135);
+			nthree.setCurrent(defaultMid);
 		}
 		
 		
@@ -165,14 +171,15 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 		
 		Context ctx = this.getBaseContext();
 		final String protocol = "Starting Strength";
+		float defaultWeight = LiftbookSettingsHelper.GetDefaultWeight(this);
 		
 		LiftbookDataHelper helper = new LiftbookDataHelper(ctx);
 		
 		if(wa.isChecked()){
 			
 			if(box.isChecked()){
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 5, 45, protocol);
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 5, 45, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 5, defaultWeight, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 5, defaultWeight, protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 5,
 						CalculationHelper.CalcWeightForPct(0.40,none.getCurrent(),true), protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_1+" Warmup", 3,
@@ -186,8 +193,8 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 			}
 			
 			if(box.isChecked()){
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 5, 45, protocol);
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 5, 45, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 5, defaultWeight, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 5, defaultWeight, protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 3,
 						CalculationHelper.CalcWeightForPct(0.50,ntwo.getCurrent(),true), protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_A_TYPE_2+" Warmup", 3,
@@ -216,8 +223,8 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 		}else{
 			
 			if(box.isChecked()){
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 5, 45, protocol);
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 5, 45, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 5, defaultWeight, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 5, defaultWeight, protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 5,
 						CalculationHelper.CalcWeightForPct(0.40,none.getCurrent(),true), protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_1+" Warmup", 3,
@@ -231,8 +238,8 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 			}
 			
 			if(box.isChecked()){
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 5, 45, protocol);
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 5, 45, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 5, defaultWeight, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 5, defaultWeight, protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 3,
 						CalculationHelper.CalcWeightForPct(0.55,ntwo.getCurrent(),true), protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_2+" Warmup", 3,
@@ -246,8 +253,8 @@ public class StartingStrengthBasicActivity extends Activity implements OnChecked
 			}
 			
 			if(box.isChecked()){
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 5, 45, protocol);
-				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 5, 45, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 5, defaultWeight, protocol);
+				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 5, defaultWeight, protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 5,
 						CalculationHelper.CalcWeightForPct(0.55,nthree.getCurrent(),true), protocol);
 				helper.StoreScheduledSet(ctx, picker.getDate(), WORK_B_TYPE_3+" Warmup", 3,

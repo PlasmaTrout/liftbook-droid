@@ -144,6 +144,9 @@ public class LiftbookCreateActivity extends ListActivity {
     		RefreshList();
     		this.setTitle("LiftBook - "+item.getTitle());
     		break;
+    	case R.id.settings:
+    		startActivity(new Intent("com.latchd.liftbook.SETTINGS"));
+    		break;
     	default:
     		Toast t = Toast.makeText(this, item.getTitle(),Toast.LENGTH_SHORT);
         	t.show();

@@ -2,25 +2,28 @@ package com.latchd.templates;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.latchd.liftbook.data.ILiftStorageFactory;
 import com.latchd.liftbook.data.LiftbookDataHelper;
+import com.latchd.liftbook.data.LiftbookSettingsHelper;
 import com.latchd.liftbook.data.ScheduledLift;
 
 public class StrongLiftsBasicStorageFactory implements ILiftStorageFactory {
 	public static final String LABEL = "StrongLifts 5x5";
-	public int Save(Context context, ArrayList<ScheduledLift> lifts,boolean useWarmupSets) {
+	public int Save(Context context, ArrayList<ScheduledLift> lifts,boolean useWarmupSets,Activity a) {
 		
 		LiftbookDataHelper helper = new LiftbookDataHelper(context);
+		float defaultWeight = LiftbookSettingsHelper.GetDefaultWeight((Activity)context);
 		
 		if(useWarmupSets){
 						
 			for(ScheduledLift lift : lifts){
 				
 				if(!lift.getName().contains("Deadlift")){
-					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",2, 5, 45), LABEL);
-					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",2, 5, 45), LABEL);
+					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",2, 5, defaultWeight), LABEL);
+					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",2, 5, defaultWeight), LABEL);
 					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",1, 3, GetWarmupValue(lift.getWeight(),50)),LABEL);
 					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",1, 3, GetWarmupValue(lift.getWeight(),60)),LABEL);
 					helper.StoredScheduledLift(context, new ScheduledLift(lift.getDate(), lift.getName()+" Warmup",1, 2, GetWarmupValue(lift.getWeight(),70)),LABEL);
@@ -50,6 +53,12 @@ public class StrongLiftsBasicStorageFactory implements ILiftStorageFactory {
 		 double value = totalWeight * ((double)percentage / 100.00);
          int adjustedWeight = (int) ((int)Math.round(value / 5.0)) * 5;
 		 return adjustedWeight;
+	}
+
+	public int Save(Context context, ArrayList<ScheduledLift> lifts,
+			boolean useWarmupSets) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

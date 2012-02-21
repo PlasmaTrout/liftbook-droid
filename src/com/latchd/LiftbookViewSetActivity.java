@@ -61,7 +61,7 @@ public class LiftbookViewSetActivity extends Activity {
 		
 		onerep.setText("1RM "+item.GetEpleyOneRepMax());
 		
-		box.setChecked(item.isCompleted());
+		//box.setChecked(item.isCompleted());
 		
 		save.setOnClickListener(new OnClickListener() {
 			

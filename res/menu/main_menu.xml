@@ -12,7 +12,7 @@
         </menu>
     </item>
     <item android:title="Add Run" android:id="@+id/addrun" android:titleCondensed="Add Run" android:alphabeticShortcut="r" android:enabled="true" android:icon="@drawable/appbarjog2"></item>
-    <item android:title="Set Display Range" android:enabled="true" android:id="@+id/setranges" android:titleCondensed="Display" android:icon="@drawable/phone">
+    <item android:title="Set Display Range" android:enabled="true" android:id="@+id/setranges" android:titleCondensed="Display" android:icon="@drawable/filter_icon">
     <menu><item android:enabled="true" android:id="@+id/today" android:titleCondensed="Today Only" android:title="Show Todays Workouts Only" android:alphabeticShortcut="t"></item><item android:id="@+id/lastsevendays" android:enabled="true" android:titleCondensed="Last 7 Days" android:title="Show Week (-3, Today, +3)" android:alphabeticShortcut="7" android:numericShortcut="7"></item><item android:id="@+id/month" android:title="Show This Months Workouts" android:titleCondensed="Show This Month" android:alphabeticShortcut="m" android:enabled="true" />
     <item android:titleCondensed="Year View" android:enabled="true" android:id="@+id/yearview" android:title="Show The Entire Years Workouts" android:alphabeticShortcut="y"></item>
     

@@ -192,27 +192,26 @@ public class StrongLiftsBasicActivity extends Activity implements OnCheckedChang
 		return result;*/
 	}
 
-	@Override
+	//@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inf = getMenuInflater();
-		inf.inflate(R.menu.open_lift_menu,menu);
+		MenuInflater inf = this.getMenuInflater();
+		inf.inflate(R.menu.open_lift_menu, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	@Override
+	//@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()){
-		case(R.id.save):
-			GenerateLifts();
-			this.finish();
-			return true;
-		case(R.id.cancel):
-			this.finish();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
+			case (R.id.save):
+				GenerateLifts();
+				this.finish();
+				return true;
+			case (R.id.cancel):
+				this.finish();
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
 		}
-		
 	}
 	
 	private void GenerateLifts(){

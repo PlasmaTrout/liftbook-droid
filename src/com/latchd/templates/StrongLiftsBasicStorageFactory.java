@@ -12,7 +12,7 @@ import com.latchd.liftbook.data.ScheduledLift;
 
 public class StrongLiftsBasicStorageFactory implements ILiftStorageFactory {
 	public static final String LABEL = "StrongLifts 5x5";
-	public int Save(Context context, ArrayList<ScheduledLift> lifts,boolean useWarmupSets,Activity a) {
+	public int Save(Context context, ArrayList<ScheduledLift> lifts,boolean useWarmupSets) {
 		
 		LiftbookDataHelper helper = new LiftbookDataHelper(context);
 		float defaultWeight = LiftbookSettingsHelper.GetDefaultWeight((Activity)context);
@@ -55,10 +55,6 @@ public class StrongLiftsBasicStorageFactory implements ILiftStorageFactory {
 		 return adjustedWeight;
 	}
 
-	public int Save(Context context, ArrayList<ScheduledLift> lifts,
-			boolean useWarmupSets) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }
